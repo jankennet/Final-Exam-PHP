@@ -1,9 +1,17 @@
 <?php
 
-const HOST = 'localhost'; //DB Location
-const USER = 'root'; //Identity for authorization to access database
-const PWD = '';
-const DBNAME = 'belano_visitor_system';
+if (!defined('HOST')) {
+    define('HOST', 'localhost'); //DB Location
+}
+if (!defined('USER')) {
+    define('USER', 'root'); //Identity for authorization to access database
+}
+if (!defined('PWD')) {
+    define('PWD', '');
+}
+if (!defined('DBNAME')) {
+    define('DBNAME', 'belano_visitor_system');
+}
 
 if (!function_exists('ConnectDB')) {
     function ConnectDB() {
