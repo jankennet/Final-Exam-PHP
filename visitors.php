@@ -1,4 +1,7 @@
 <?php
+session_start();
+include 'includes/check-session.php';
+
 $page='Visitors';
 
 include 'includes/visitors.php';

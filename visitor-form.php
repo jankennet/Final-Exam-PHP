@@ -1,4 +1,7 @@
 <?php
+session_start();
+include 'includes/check-session.php';
+
 $page='New Visitor';
 include 'includes/visitors.php';
 
@@ -25,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $school_office = $_POST['school_office'] ?? '';
     $purpose = $_POST['purpose'] ?? '';
     $purpose_details = $_POST['purpose_details'] ?? '';
-    $created_by = 1; // You would get this from session/login
+    $created_by = $current_user['user_id']; // Get from logged-in user
 
     if ($is_edit) {
         $result = updateVisitor(
